@@ -18,7 +18,7 @@ export default function(state, action) {
     case "FETCH_SUCCESS": {
       return {
         ...state,
-        searchedVideos: action.videoIds
+        searchedVideos: action.relatedVideos
       };
     }
 

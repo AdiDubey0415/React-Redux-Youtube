@@ -18,7 +18,7 @@ export function submitSearch() {
 export function fetchYoutubeVideos(searchTerm) {
   const request = () =>
     axios.get(
-      `https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=${API_KEY}`
+      `https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&type=video&maxResults=25&part=snippet&key=${API_KEY}`
     );
   return dispatch => {
     dispatch({
@@ -27,10 +27,17 @@ export function fetchYoutubeVideos(searchTerm) {
     });
     request()
       .then(({data}) => {
-        const itemsArray = data.items.map(video => video.id.videoId);
+        const itemsArray = data.items.map(video => {
+          return {
+            id: video.id.videoId,
+            title: video.snippet.title,
+            description: video.snippet.description,
+            thumbnails: video.snippet.thumbnails
+          };
+        });
         dispatch({
           type: "FETCH_SUCCESS",
-          videoIds: itemsArray
+          relatedVideos: itemsArray
         });
       })
       .catch(({data}) => {
