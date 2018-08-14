@@ -9,6 +9,13 @@ export function setSearch(value) {
   };
 }
 
+export function handleChange(value) {
+  return {
+    type: "CHANGE_SEARCH_TEXT",
+    value
+  };
+}
+
 export function submitSearch() {
   return {
     type: "SUBMIT_SEARCH"

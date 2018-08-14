@@ -15,6 +15,10 @@ export default function(state, action) {
       };
     }
 
+    case "CHANGE_SEARCH_TEXT": {
+      return {...state, searchState: {...state.searchState, searchTerm: action.value}};
+    }
+
     case "FETCH_SUCCESS": {
       return {
         ...state,
@@ -25,7 +29,7 @@ export default function(state, action) {
     case "FETCH_FAILURE": {
       return {
         ...state,
-        error: "ERROR FETCHING DATA"
+        error: "ERROR CHANGE_SEARCH_TEXT DATA"
       };
     }
 

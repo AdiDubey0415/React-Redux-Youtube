@@ -9,6 +9,12 @@ import thunk from "redux-thunk";
 
 export const store = createStore(reducers, applyMiddleware(thunk));
 
+const showState = () => {
+  console.log(store.getState());
+};
+
+store.subscribe(showState);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

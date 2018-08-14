@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
+import React, {Component} from "react";
 
 export default class SearchVideo extends Component {
-    render() {
-        return (
-            <section>
-                <form onSubmit={this.props.handleSearchSubmit}>
-                    <input type="text" value={this.props.appState.searchState.searchTerm}
-                    onChange={(event) => this.props.handleVideoSearch(event)}/>
-                </form>
-            </section>
-        );
-    }
+  render() {
+    return (
+      <section>
+        <input
+          type="text"
+          value={this.props.appState.searchState.searchTerm}
+          onChange={event => this.props.handleVideoSearch(event)}
+        />
+        <input
+          type="button"
+          value="Submit"
+          onClick={e =>
+            this.props.handleSearchSubmit(e, this.props.appState.searchState.searchTerm)
+          }
+        />
+      </section>
+    );
+  }
 }

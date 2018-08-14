@@ -3,7 +3,7 @@ import SearchVideo from "./Components/search";
 import "./App.css";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import {fetchYoutubeVideos} from "./ActionCreators/actions";
+import {fetchYoutubeVideos, handleChange} from "./ActionCreators/actions";
 
 class App extends Component {
   showState = () => {
@@ -11,12 +11,13 @@ class App extends Component {
   };
 
   handleVideoSearch = event => {
-    this.props.fetchYoutubeVideos(event.target.value);
+    this.props.handleChange(event.target.value);
+    //this.props.fetchYoutubeVideos(event.target.value);
   };
 
-  handleSearchSubmit = event => {
+  handleSearchSubmit = (event, value) => {
     event.preventDefault();
-    this.props.fetchYoutubeVideos(event.target.value);
+    this.props.fetchYoutubeVideos(value);
   };
 
   render() {
@@ -25,7 +26,7 @@ class App extends Component {
         <SearchVideo
           appState={this.props.appState}
           handleVideoSearch={event => this.handleVideoSearch(event)}
-          handleSearchSubmit={event => this.handleSearchSubmit(event)}
+          handleSearchSubmit={this.handleSearchSubmit}
         />
 
         <button onClick={this.showState}>Show State</button>
@@ -41,7 +42,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({fetchYoutubeVideos}, dispatch);
+  return bindActionCreators({fetchYoutubeVideos, handleChange}, dispatch);
 };
 
 export default connect(
