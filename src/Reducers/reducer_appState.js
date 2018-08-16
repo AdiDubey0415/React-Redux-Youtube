@@ -15,6 +15,10 @@ export default function(state, action) {
       return newState;
     }
 
+    case "CHANGE_SEARCH_TEXT": {
+      return {...state, searchState: {...state.searchState, searchTerm: action.value}};
+    }
+
     case "FETCH_SUCCESS": {
       newState = {...state};
       newState.searchedVideos = action.relatedVideos;
