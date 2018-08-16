@@ -9,6 +9,27 @@ export function setSearch(value) {
   };
 }
 
+export function playSelectedVideo(value) {
+  return {
+    type: "PLAY_SELECTED_VIDEO",
+    payload: value
+  };
+}
+
+export function bookmarkVideo(value) {
+  return {
+    type: "BOOKMARK_VIDEO",
+    payload: value
+  };
+}
+
+export function removeBookmarkedVideo(value) {
+  return {
+    type: "REMOVE_BOOKMARK_VIDEO",
+    payload: value
+  };
+}
+
 export function submitSearch() {
   return {
     type: "SUBMIT_SEARCH"
@@ -20,6 +41,7 @@ export function fetchYoutubeVideos(searchTerm) {
     axios.get(
       `https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&type=video&maxResults=25&part=snippet&key=${API_KEY}`
     );
+
   return dispatch => {
     dispatch({
       type: "LOADING",
@@ -46,4 +68,5 @@ export function fetchYoutubeVideos(searchTerm) {
         });
       });
   };
+
 }

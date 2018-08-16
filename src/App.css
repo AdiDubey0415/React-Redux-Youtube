@@ -26,3 +26,52 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.bookmarked {
+  background: orange;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.unbookmarked {
+  background: green;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.iframeClass {
+  width: 75%;
+  height: 500px;
+  margin-top: 3rem;
+}
+
+.searchInputClass {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.ul-class {
+  list-style: none;
+}
+
+.span-class {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.li-class {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.span-flex-class {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
