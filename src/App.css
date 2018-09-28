@@ -1,5 +1,19 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+.header-class {
+  font-family: "Raleway", sans-serif;
+}
+
 .App {
   text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -28,50 +42,214 @@
 }
 
 .bookmarked {
-  background: orange;
+  background: #148000;
   font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.1rem;
   color: white;
+  font-size: 0.75rem;
+  border: 0;
+  margin-top: 1rem;
+  display: block;
 }
 
 .unbookmarked {
-  background: green;
+  background: #80000099;
   font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.1rem;
   color: white;
+  font-size: 0.75rem;
+  border: 0;
+  margin-top: 1rem;
+  display: block;
 }
 
 .iframeClass {
-  width: 75%;
+  width: 95%;
   height: 500px;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .searchInputClass {
-  width: 100%;
+  width: 94%;
+  max-width: 94%;
   padding: 0.5rem;
   font-size: 1rem;
 }
 
 .ul-class {
   list-style: none;
+  padding-left: 0;
+  padding: 1rem;
+  margin: 0;
 }
 
-.span-class {
-  font-size: 1.5rem;
-  margin: 1rem;
-}
-
-.li-class {
+.span-class {    
+  font-size: 0.75rem;
+  text-align: left;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 2px lightgrey;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
+  align-items: flex-start;
+}
+
+.li-class {    
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 0 1rem 0;
 }
 
 .span-flex-class {
   display: flex;
   flex-direction: column;
   width: 40%;
+  flex: 1;
+}
+
+.played-bookmarked-li-class {
+  max-height: 100px;
+  height: 100px;
+  flex-direction: row;
+}
+
+.played-bookmarked-ul-class {
+  padding-left: 0!important;
+}
+
+.played-bookmarked-span-buttons {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.search-div {
+  width: 30%;
+  border-right: 1px solid lightgrey;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.search-input-div {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.videos-list {
+  position: absolute;
+  top: 70px;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+/*
+ *  STYLE 3
+ */
+
+#style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
+
+header
+{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 25px;  
+}
+
+#info
+{
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+a{
+  color: #074E8C;
+}
+
+.scrollbar
+{
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+
+.force-overflow
+{
+  min-height: 450px;
+}
+
+#wrapper
+{
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+
+.video-player-div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.app-sub-div {
+  height: 100%;
+  width: 100%;
+  display: flex; 
+  position: relative;
+}
+
+.played-bookmarked-span {
+  display: flex;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.header-class {
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 2px lightgrey;
+  display: flex;
+  justify-content: flex-start;
 }

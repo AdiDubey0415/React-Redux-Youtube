@@ -41,9 +41,13 @@ class App extends Component {
     return (
       <div className="App">
 
-        <div style={{'display': 'flex'}}>
+        <header className="header-class">
+          Find what you're looking for...
+        </header>
 
-          <div style={{'width': '30%', 'borderRight': '1px solid lightgrey', 'padding-right': '2rem'}}>
+        <div className="app-sub-div">
+
+          <div className="search-div">
             <SearchVideo
             appState={this.props.appState}
             handleVideoSearch={event => this.handleVideoSearch(event)}
@@ -55,33 +59,35 @@ class App extends Component {
             handleBookmarkVideo={(item) => this.handleBookmarkVideo(item)}/>
           </div>
 
-          <div style={{'width': '70%', 'display': 'flex', 'flexDirection': 'column'}}>
+          <div style={{'width': '70%', 'display': 'flex', 'flexDirection': 'column', 'position': 'relative'}}>
 
-            <VideoPlayer appState={this.props.appState}/>
+            <div className="video-player-div">
 
-            <span style={{'display': 'flex'}}>
+              <VideoPlayer appState={this.props.appState}/>
+              <hr className="hr-class"/>
+              <span className="played-bookmarked-span">
 
-              <span className="span-flex-class">
-                <hr/>
-                <span className="span-class">
-                  Played Videos
+                <span className="span-flex-class">
+                  <span className="span-class played-bookmarked-span-buttons" style={{'marginRight': '1rem'}}>
+                    Played Videos
+                  </span>
+                  <PlayedVideos appState={this.props.appState} 
+                  handleVideoClick={(item) => this.handleVideoClick(item)} 
+                  handleBookmarkVideo={(item) => this.handleBookmarkVideo(item)}/>
                 </span>
-                <PlayedVideos appState={this.props.appState} 
-                handleVideoClick={(item) => this.handleVideoClick(item)} 
-                handleBookmarkVideo={(item) => this.handleBookmarkVideo(item)}/>
+
+                <span className="span-flex-class">
+                  <span className="span-class played-bookmarked-span-buttons">
+                    Bookmarked Videos
+                  </span>
+                  <BookmarkedVideos appState={this.props.appState}
+                  handleVideoClick={(item) => this.handleVideoClick(item)}
+                  removeBookmarkedVideo={(item) => this.removeBookmarkedVideo(item)}/>
+                </span>
+
               </span>
 
-              <span className="span-flex-class">
-                <hr/>
-                <span className="span-class">
-                  Bookmarked Videos
-                </span>
-                <BookmarkedVideos appState={this.props.appState}
-                handleVideoClick={(item) => this.handleVideoClick(item)}
-                removeBookmarkedVideo={(item) => this.removeBookmarkedVideo(item)}/>
-              </span>
-
-            </span>
+            </div>  
 
           </div>
 

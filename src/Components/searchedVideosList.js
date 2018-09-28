@@ -22,10 +22,10 @@ export default class SearchedVideos extends Component {
                             <span style={{'display': 'flex', 'flexDirection': 'column'}}>
                                 <span className="span-class">
                                     {item.title}
+                                    <button onClick={() => this.props.handleBookmarkVideo(item)} className={bookmarkClass}>
+                                        Bookmark
+                                    </button>
                                 </span>
-                                <button onClick={() => this.props.handleBookmarkVideo(item)} className={bookmarkClass}>
-                                    Bookmark Video
-                                </button>
                             </span>
                         </li>
                     );
@@ -36,8 +36,8 @@ export default class SearchedVideos extends Component {
 
     render() {
         return (
-            <div>
-                <ul className="ul-class">
+            <div className="videos-list" id="style-3">
+                <ul className="ul-class" style={{'paddingLeft': '0'}}>
                     { this.renderListFunction() }
                 </ul>
             </div>

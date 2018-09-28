@@ -7,15 +7,15 @@ export default class BookmarkedVideos extends Component {
             return (
                 this.props.appState.bookmarkedVideos.map((item) => {
                     return (
-                        <li key={item.id} className="li-class">
-                            <img src={item.thumbnails.medium.url} onClick={() => this.props.handleVideoClick(item)}/>
-                            <span style={{'display': 'flex', 'flexDirection': 'column'}}>
+                        <li key={item.id} className="li-class played-bookmarked-li-class">
+                            <img src={item.thumbnails.default.url} onClick={() => this.props.handleVideoClick(item)}/>
+                            <span style={{'display': 'flex', 'flexDirection': 'column', 'width': '100%'}}>
                                 <span className="span-class">
                                     {item.title}
+                                    <button onClick={() => this.props.removeBookmarkedVideo(item)} className="bookmarked" style={{'backgroundColor': 'red', 'marginTop': 'auto'}}>
+                                        Remove
+                                    </button>
                                 </span>
-                                <button onClick={() => this.props.removeBookmarkedVideo(item)} className="bookmarked" style={{'backgroundColor': 'red'}}>
-                                    Remove Bookmark
-                                </button>
                             </span>
                         </li>
                     );
@@ -27,7 +27,7 @@ export default class BookmarkedVideos extends Component {
     render() {
         return (
             <div>
-                <ul className="ul-class">
+                <ul className="ul-class played-bookmarked-ul-class">
                     { this.renderListFunction() }
                 </ul>
             </div>
